@@ -9,7 +9,7 @@
 import Foundation
 
 struct Event: Codable {
-    var id: Int
+    var id: String
     var name: String
     var description: String
     var startTime: Int
