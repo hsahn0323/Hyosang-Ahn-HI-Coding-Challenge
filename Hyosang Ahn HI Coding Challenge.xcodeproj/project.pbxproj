@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98416D902512C4E6000D9D17 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98416D8F2512C4E6000D9D17 /* Event.swift */; };
+		98416D922512C7E2000D9D17 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98416D912512C7E2000D9D17 /* Events.swift */; };
 		98B1E958250AC38900546D41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E957250AC38900546D41 /* AppDelegate.swift */; };
 		98B1E95A250AC38900546D41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E959250AC38900546D41 /* SceneDelegate.swift */; };
 		98B1E95C250AC38900546D41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E95B250AC38900546D41 /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		98B1E967250AC38C00546D41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1E965250AC38C00546D41 /* LaunchScreen.storyboard */; };
 		98B1E972250AC38C00546D41 /* Hyosang_Ahn_HI_Coding_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E971250AC38C00546D41 /* Hyosang_Ahn_HI_Coding_ChallengeTests.swift */; };
 		98B1E97D250AC38C00546D41 /* Hyosang_Ahn_HI_Coding_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E97C250AC38C00546D41 /* Hyosang_Ahn_HI_Coding_ChallengeUITests.swift */; };
+		98B1E98B250AC86500546D41 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1E98A250AC86500546D41 /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98416D8F2512C4E6000D9D17 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		98416D912512C7E2000D9D17 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		98B1E954250AC38900546D41 /* Hyosang Ahn HI Coding Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyosang Ahn HI Coding Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1E957250AC38900546D41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1E959250AC38900546D41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		98B1E978250AC38C00546D41 /* Hyosang Ahn HI Coding ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hyosang Ahn HI Coding ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1E97C250AC38C00546D41 /* Hyosang_Ahn_HI_Coding_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyosang_Ahn_HI_Coding_ChallengeUITests.swift; sourceTree = "<group>"; };
 		98B1E97E250AC38C00546D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98B1E98A250AC86500546D41 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,10 @@
 			children = (
 				98B1E957250AC38900546D41 /* AppDelegate.swift */,
 				98B1E959250AC38900546D41 /* SceneDelegate.swift */,
+				98B1E98A250AC86500546D41 /* JSONParser.swift */,
+				98416D8F2512C4E6000D9D17 /* Event.swift */,
 				98B1E95B250AC38900546D41 /* ViewController.swift */,
+				98416D912512C7E2000D9D17 /* Events.swift */,
 				98B1E95D250AC38900546D41 /* Main.storyboard */,
 				98B1E963250AC38C00546D41 /* Assets.xcassets */,
 				98B1E965250AC38C00546D41 /* LaunchScreen.storyboard */,
@@ -262,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98416D902512C4E6000D9D17 /* Event.swift in Sources */,
 				98B1E962250AC38900546D41 /* Hyosang_Ahn_HI_Coding_Challenge.xcdatamodeld in Sources */,
+				98B1E98B250AC86500546D41 /* JSONParser.swift in Sources */,
 				98B1E95C250AC38900546D41 /* ViewController.swift in Sources */,
+				98416D922512C7E2000D9D17 /* Events.swift in Sources */,
 				98B1E958250AC38900546D41 /* AppDelegate.swift in Sources */,
 				98B1E95A250AC38900546D41 /* SceneDelegate.swift in Sources */,
 			);
