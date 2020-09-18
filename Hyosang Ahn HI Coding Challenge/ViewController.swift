@@ -26,13 +26,14 @@ class ViewController: UIViewController {
     
     var 📋 = [Event]()
     
+    // Reference: https://www.hackingwithswift.com/read/7/3/parsing-json-using-the-codable-protocol
     func parse(json: Data) {
         let decoder = JSONDecoder()
         
         if let jsonEvents = try? decoder.decode(Events.self, from: json) {
             📋 = jsonEvents.events
 //            tableView.reloadData()
-            print(📋)
+            dump(📋)
         } else {
             print("error")
         }
