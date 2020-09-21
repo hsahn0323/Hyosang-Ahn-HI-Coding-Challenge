@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,6 +39,23 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iB-6h-fUK" userLabel="Dates Stack View">
                                 <rect key="frame" x="10" y="110" width="394" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-NP-jLh">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ0-C7-rel">
+                                        <rect key="frame" x="349" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="LVo-rW-sv0"/>
+                                        </constraints>
+                                        <state key="normal" image="chevron.down" catalog="system"/>
+                                        <connections>
+                                            <action selector="dateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f7y-zs-rLI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="m1F-KQ-Co2"/>
                                 </constraints>
@@ -46,7 +65,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="noS-Hx-l7j" userLabel="Schedule Table View" customClass="ScheduleTableView" customModule="Hyosang_Ahn_HI_Coding_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="1000"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="93A-5j-MHh"/>
                                         </constraints>
@@ -95,7 +114,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Event Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-Ee-LgO">
-                                                            <rect key="frame" x="20.000000000000007" y="59.666666666666657" width="125.66666666666669" height="20"/>
+                                                            <rect key="frame" x="20.000000000000007" y="59.666666666666657" width="124.66666666666669" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -145,7 +164,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="j7c-qw-pmj"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="14x-xT-5LF" secondAttribute="trailing" constant="10" id="2d1-3W-9dG"/>
                             <constraint firstItem="9Q7-8Y-kwh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PgZ-W5-ucZ"/>
@@ -158,13 +178,14 @@
                             <constraint firstItem="14x-xT-5LF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="plO-2Z-0Tm"/>
                             <constraint firstItem="9Q7-8Y-kwh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="v9V-IF-jd7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ScheduleTableView" destination="noS-Hx-l7j" id="z89-1P-5ES"/>
                         <outlet property="TableViewHeightConstraint" destination="93A-5j-MHh" id="0Zw-FJ-tRy"/>
+                        <outlet property="dateTextField" destination="vuN-NP-jLh" id="MKG-Ly-mUU"/>
+                        <outlet property="tableViewHeightConstraint" destination="93A-5j-MHh" id="aPh-Fz-rbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -173,7 +194,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
