@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Untitled_Artwork.png")!)
+        
         // JSON data parsing
         let urlString = "https://api.hackillinois.org/event/"
 
@@ -188,6 +190,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             dateTextField.text = dateList[0]
         }
     }
+    
     func dismissPickerView() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -196,6 +199,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         toolBar.isUserInteractionEnabled = true
         dateTextField.inputAccessoryView = toolBar
     }
+    
     @objc func action() {
           view.endEditing(true)
     }
