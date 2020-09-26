@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var selectedDate: String?
     var dateList = [String]()
     
+    @IBOutlet weak var DatesStackView: UIStackView!
     @IBOutlet weak var ScheduleTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
@@ -27,7 +28,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Untitled_Artwork.png")!)
+//        // Reference: https://stackoverflow.com/questions/38628803/how-to-set-background-image-in-swift/47175787
+//        UIGraphicsBeginImageContext(self.view.frame.size)
+//        UIImage(named: "Untitled_Artwork.png")?.draw(in: self.view.bounds)
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        UIGraphicsEndImageContext()
+//        self.view.backgroundColor = UIColor(patternImage: image)
+        
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Untitled_Artwork.png")!)
         
         // JSON data parsing
         let urlString = "https://api.hackillinois.org/event/"
@@ -37,6 +45,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 parse(json: data)
             }
         }
+        
+        DatesStackView.layer.cornerRadius = 8
+        DatesStackView.layer.masksToBounds = true
+        ScheduleTableView.layer.cornerRadius = 8
+        ScheduleTableView.layer.masksToBounds = true
         // Implementing data into table
         ScheduleTableView.delegate = self
         ScheduleTableView.dataSource = self
@@ -54,6 +67,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ScheduleCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! ScheduleCell
+        
+        cell.contentView.layer.cornerRadius = 8
+        cell.contentView.layer.masksToBounds = true
 
         let event = self.📋[indexPath.row]
         cell.eventName.text = event.name

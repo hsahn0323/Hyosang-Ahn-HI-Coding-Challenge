@@ -15,4 +15,10 @@ class ScheduleCell: UITableViewCell {
     @IBOutlet weak var typeEmoji: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+    }
 }
