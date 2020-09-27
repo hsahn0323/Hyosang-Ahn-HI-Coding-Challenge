@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var DatesStackView: UIStackView!
     @IBOutlet weak var ScheduleTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var eventScrollView: UIScrollView!
     
     @IBOutlet weak var dateTextField: UITextField!
     
@@ -48,8 +49,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         DatesStackView.layer.cornerRadius = 8
         DatesStackView.layer.masksToBounds = true
+        if traitCollection.userInterfaceStyle == .light {
+            DatesStackView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        } else {
+            DatesStackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        }
         ScheduleTableView.layer.cornerRadius = 8
         ScheduleTableView.layer.masksToBounds = true
+        
+        eventScrollView.layer.cornerRadius = 8
+        eventScrollView.layer.masksToBounds = true
+        
         // Implementing data into table
         ScheduleTableView.delegate = self
         ScheduleTableView.dataSource = self
@@ -74,14 +84,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let event = self.📋[indexPath.row]
         cell.eventName.text = event.name
         
-        if event.locations.count != 0 {
-            for location in event.locations {
-                cell.eventLocation.text! += location
-                if location != event.locations[event.locations.count - 1] {
-                    cell.eventLocation.text! += ", "
-                }
-            }
-        }
+//        if event.locations.count != 0 {
+//            for location in event.locations {
+//                cell.eventLocation.text! += location
+//                if location != event.locations[event.locations.count - 1] {
+//                    cell.eventLocation.text! += ", "
+//                }
+//            }
+//        }
+        
+        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+//        formatter.timeStyle = .short
+        formatter.timeZone = .current
+        formatter.dateFormat = "HH:mm a"
+        
+        cell.eventTime.text = formatter.string(from: NSDate(timeIntervalSince1970: TimeInterval(event.startTime)) as Date)
         
         cell.eventDescription.text = event.description
         
@@ -126,6 +144,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     📋.append(event)
                 }
             }
+            📋.sort(by: {$0.startTime < $1.startTime})
             dump(📋)
         } else {
             print("error")
