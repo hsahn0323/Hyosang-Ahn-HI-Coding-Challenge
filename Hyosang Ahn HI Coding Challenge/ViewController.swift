@@ -97,7 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        formatter.dateStyle = .short
 //        formatter.timeStyle = .short
         formatter.timeZone = .current
-        formatter.dateFormat = "HH:mm a"
+        formatter.dateFormat = "hh:mm a"
         
         cell.eventTime.text = formatter.string(from: NSDate(timeIntervalSince1970: TimeInterval(event.startTime)) as Date)
         
